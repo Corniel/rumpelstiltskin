@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rumpelstiltskin.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Rumpelstiltskin.Api.Controllers.NameSelectionAppController">
+            <summary>API Controller for applying quering logic on <see cref="T:Rumpelstiltskin.Domain.NameSelection"/>.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Controllers.NameSelectionAppController.#ctor(Rumpelstiltskin.Shared.Handlers.RequestProcessor)">
+            <summary>Initializes a new instance of the <see cref="T:Rumpelstiltskin.Api.Controllers.NameSelectionAppController"/> class.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Controllers.NameSelectionAppController.Get(Qowaiv.Identifiers.Id{Rumpelstiltskin.Shared.ForNameSelection})">
+            <summary>Queries the <see cref="T:Rumpelstiltskin.Application.Responses.NameSelectionView"/>.</summary>
+            <param name="id">
+            The identifier of the name selection.
+            </param>
+        </member>
+        <member name="T:Rumpelstiltskin.Api.Controllers.NameSelectionController">
+            <summary>API Controller for applying domain logic on <see cref="T:Rumpelstiltskin.Domain.NameSelection"/>.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Controllers.NameSelectionController.#ctor(Rumpelstiltskin.Shared.Handlers.CommandProcessor)">
+            <summary>Initializes a new instance of the <see cref="T:Rumpelstiltskin.Api.Controllers.NameSelectionController"/> class.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Controllers.NameSelectionController.New">
+            <summary>Creates a name selection.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Controllers.NameSelectionController.Compare(Rumpelstiltskin.Domain.Commands.Compare)">
+            <summary>Compares two candidate names.</summary>
+        </member>
+        <member name="T:Rumpelstiltskin.Api.ModelBinding.TypeConverterModelBinder">
+             <summary>A model binder for types with a custom type converter.</summary>
+             <remarks>
+             This binder supports models that have there own TypeConverter.
+            
+             The message of the exception thrown by there type converter in case of
+             failure is the error message added to the model state.
+            
+             This binder is needed because the default model binder
+             does not show the message of the exception thrown by the type converter.
+             </remarks>
+        </member>
+        <member name="F:Rumpelstiltskin.Api.ModelBinding.TypeConverterModelBinder.typeConverters">
+            <summary>A Dictionary that keeps track of the registered type converters.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.ModelBinding.TypeConverterModelBinder.#ctor">
+            <summary>Static constructor.</summary>
+            <remarks>
+            Add all types of Qowaiv that are supported by the model binder.
+            </remarks>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.ModelBinding.TypeConverterModelBinder.AddAssembly(System.Reflection.Assembly)">
+            <summary>Adds the types of the assembly that are marked with teh SingleValueObjectAttribute.</summary>
+            <param name="assembly">
+            Assembly to add.
+            </param>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.ModelBinding.TypeConverterModelBinder.AddTypes(System.Type[])">
+            <summary>Adds the specified types.</summary>
+            <param name="tps">
+            Types to add.
+            </param>
+            <remarks>
+            Only adds the types that are supported by the model binder.
+            </remarks>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.ModelBinding.TypeConverterModelBinder.AddType(System.Type)">
+            <summary>Adds the specified type.</summary>
+            <param name="tp">
+            Type to add.
+            </param>
+            <remarks>
+            Only adds the types that are supported by the model binder.
+            </remarks>
+        </member>
+        <member name="P:Rumpelstiltskin.Api.ModelBinding.TypeConverterModelBinder.Types">
+            <summary>Gets the types that where added to the model binder.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.ModelBinding.TypeConverterModelBinder.GetBinder(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Rumpelstiltskin.Api.ModelBinding.TypeConverterModelBinder.BindModelAsync(Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Rumpelstiltskin.Api.OpenApi.Documentation.Swagger(Swashbuckle.AspNetCore.Swagger.SwaggerOptions)">
+            <summary>Defines how to use Swagger Open API.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.OpenApi.Documentation.SwaggerUI(Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIOptions)">
+            <summary>Configures Swagger Open API UI.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.OpenApi.Documentation.Generation(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <summary>Configures the Open API documentation generation.</summary>
+        </member>
+        <member name="T:Rumpelstiltskin.Api.Startup">
+            <summary>Startup class for Rumpelstiltskin API.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>Initializes a new instance of the <see cref="T:Rumpelstiltskin.Api.Startup"/> class.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>Configures the services.</summary>
+            <remarks>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </remarks>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>Configures the API.</summary>
+            <remarks>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </remarks>
+        </member>
+        <member name="T:Rumpelstiltskin.Api.Web.ApiAction">
+            <summary>API action handler.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Web.ApiAction.GetAsync``1(System.Threading.Tasks.Task{Qowaiv.Validation.Abstractions.Result{``0}})">
+            <summary>Creates a HTTP GET response.</summary>
+            <param name="promise">
+            The result potentially containing error messages).
+            </param>
+            <typeparam name="TResponse">
+            The model to return.
+            </typeparam>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Web.ApiAction.PostAsync(System.Threading.Tasks.Task{Qowaiv.Validation.Abstractions.Result},System.String,System.Object)">
+            <summary>Creates a HTTP POST response.</summary>
+            <param name="promise">
+            The result potentially containing error messages).
+            </param>
+            <param name="location">
+            The location to navigate to.
+            </param>
+            <param name="id">
+            The identifier of newly generated entity.
+            </param>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Web.ApiAction.PutAsync(System.Threading.Tasks.Task{Qowaiv.Validation.Abstractions.Result})">
+            <summary>Creates a HTTP PUT response.</summary>
+            <param name="promise">
+            The result potentially containing error messages).
+            </param>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Web.ApiAction.DeleteAsync(System.Threading.Tasks.Task{Qowaiv.Validation.Abstractions.Result})">
+            <summary>Creates a HTTP DELETE response.</summary>
+            <param name="promise">
+            The result potentially containing error messages).
+            </param>
+        </member>
+        <member name="T:Rumpelstiltskin.Api.Web.ApiResponse">
+            <summary>The normalized API response.</summary>
+        </member>
+        <member name="P:Rumpelstiltskin.Api.Web.ApiResponse.Errors">
+            <summary>The error messages (if any).</summary>
+        </member>
+        <member name="P:Rumpelstiltskin.Api.Web.ApiResponse.Warnings">
+            <summary>The warning messages (if any).</summary>
+        </member>
+        <member name="P:Rumpelstiltskin.Api.Web.ApiResponse.Infos">
+            <summary>The info messages (if any).</summary>
+        </member>
+        <member name="T:Rumpelstiltskin.Api.Web.ApiResponse.ValidationMessage">
+            <summary>Validation message.</summary>
+        </member>
+        <member name="P:Rumpelstiltskin.Api.Web.ApiResponse.ValidationMessage.Message">
+            <summary>The validation message.</summary>
+        </member>
+        <member name="P:Rumpelstiltskin.Api.Web.ApiResponse.ValidationMessage.Property">
+            <summary>The linked property (if any).</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Web.ApiResponse.ValidationMessage.Select(System.Collections.Generic.IEnumerable{Qowaiv.Validation.Abstractions.IValidationMessage})">
+            <summary>Selects <see cref="T:Rumpelstiltskin.Api.Web.ApiResponse.ValidationMessage"/>s based on <see cref="T:Qowaiv.Validation.Abstractions.IValidationMessage"/>s.</summary>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Web.ApiResponse.From``1(Qowaiv.Validation.Abstractions.Result{``0})">
+            <summary>Creates an <see cref="T:Rumpelstiltskin.Api.Web.ApiResponse`1"/> from the <see cref="T:Qowaiv.Validation.Abstractions.Result`1"/>.</summary>
+            <typeparam name="TModel">
+            The type of the model.
+            </typeparam>
+        </member>
+        <member name="M:Rumpelstiltskin.Api.Web.ApiResponse.From(Qowaiv.Validation.Abstractions.Result)">
+            <summary>Creates an <see cref="T:Rumpelstiltskin.Api.Web.ApiResponse"/> from the <see cref="T:Qowaiv.Validation.Abstractions.Result"/>.</summary>
+        </member>
+        <member name="T:Rumpelstiltskin.Api.Web.ApiResponse`1">
+            <summary>The normalized API response.</summary>
+            <typeparam name="TModel">
+            The model to return with the API response.
+            </typeparam>
+        </member>
+        <member name="P:Rumpelstiltskin.Api.Web.ApiResponse`1.Value">
+            <summary>The value of the model.</summary>
+        </member>
+        <member name="T:Rumpelstiltskin.Guard">
+            <summary>Supplies parameter guarding for methods and constructors.</summary>
+            <remarks>
+            Advised usage:
+            * Change the namespace to maximum shared namespace amongst the using projects
+            * Keep it internal and use [assembly: InternalsVisibleTo] to open up access
+            * Add specific Guard methods if you software needs them.
+            * Keep the checks cheep so that you also can run them in production code.
+            </remarks>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNull``1(``0,System.String)">
+            <summary>Guards the parameter if not null, otherwise throws an argument (null) exception.</summary>
+            <typeparam name="T">The type to guard; cannot be a structure.</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.HasValue``1(System.Nullable{``0},System.String)">
+            <summary>Throws an ArgumentException if the nullable parameter has no value, otherwise the parameter value is passed.</summary>
+            <typeparam name="T">The type to guard; must be a structure.</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotDefault``1(System.Nullable{``0},System.String)">
+            <summary>
+            Throws an ArgumentException if the nullable parameter has no value or the default value,
+            otherwise the parameter value is passed.
+            </summary>
+            <typeparam name="T">The type to guard; must be a structure.</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotDefault``1(``0,System.String)">
+            <summary>Throws an ArgumentException if the parameter has the default value, otherwise the parameter value is passed.</summary>
+            <typeparam name="T">The type to guard; must be a structure.</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.In``1(``0,System.String,``0[])">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if the parameter is not in the collection, otherwise the parameter is passed.</summary>
+            <typeparam name="T">The type to guard; must be a structure.</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <param name="allowedRange">The allowed range of values.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotIn``1(``0,System.String,``0[])">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if the parameter not in the collection, otherwise the parameter is passed.</summary>
+            <typeparam name="T">The type to guard; must be a structure.</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <param name="forbiddenRange">The forbidden range of values.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.DefinedEnum``1(``0,System.String)">
+            <summary>Throws an <see cref="T:System.ArgumentOutOfRangeException"/> if the parameter not in not a defined value of the enum, otherwise the parameter is passed.</summary>
+            <typeparam name="T">The type to guard; must be a structure (enum).</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+            <remarks>
+            That <typeparamref name="T"/> is an enum is implicitly guard by <see cref="M:System.Enum.IsDefined(System.Type,System.Object)"/>.
+            </remarks>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.IsInstanceOf``1(System.Object,System.String)">
+            <summary>
+            Guards that the parameter is an instance of T, otherwise throws an argument (null) exception.
+            It only makes sense to use this function if the original type of the <paramref name="parameter"/>
+            is <see cref="T:System.Object"/>, otherwise one should simply use <see cref="M:Rumpelstiltskin.Guard.NotNull``1(``0,System.String)"/>.
+            </summary>
+            <typeparam name="T">The type to guard.</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.HasAny``1(``0,System.String)">
+            <summary>Guards that the parameter is not null or an empty collection, otherwise throws an argument (null) exception.</summary>
+            <typeparam name="T">The type to guard; must be an <see cref="T:System.Collections.ICollection" />.</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.HasAny``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>Guards that the parameter is not null or an empty enumerable, otherwise throws an argument (null) exception.</summary>
+            <typeparam name="T">The type to guard; must be an <see cref="T:System.Collections.IEnumerable" />.</typeparam>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNullOrEmpty(System.String,System.String)">
+            <summary>Guards that the parameter is not null or an empty string, otherwise throws an argument (null) exception.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotEmpty(System.Nullable{System.Guid},System.String)">
+            <summary>Guards that the parameter is not an empty <see cref="T:System.Guid"/>, otherwise throws an argument exception.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotEmpty(System.Guid,System.String)">
+            <summary>Guards that the parameter is not an empty <see cref="T:System.Guid"/>, otherwise throws an argument exception.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.Nullable{System.Int32},System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.Int32,System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.Nullable{System.Int64},System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.Int64,System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.Nullable{System.Double},System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.Double,System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.Nullable{System.Decimal},System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.Decimal,System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.Nullable{System.TimeSpan},System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.Positive(System.TimeSpan,System.String)">
+            <summary>Throws an ArgumentException if the parameter is not positive, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.Nullable{System.Int32},System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.Int32,System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.Nullable{System.Int64},System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.Int64,System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.Nullable{System.Double},System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.Double,System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.Nullable{System.Decimal},System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.Decimal,System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.Nullable{System.TimeSpan},System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="M:Rumpelstiltskin.Guard.NotNegative(System.TimeSpan,System.String)">
+            <summary>Throws an ArgumentException if the parameter is negative, otherwise the parameter is passed.</summary>
+            <param name="parameter">The parameter to guard.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <returns>
+            The guarded parameter.
+            </returns>
+        </member>
+        <member name="T:Rumpelstiltskin.Guard.Messages">
+            <summary>Messages class to group the constants.</summary>
+        </member>
+        <member name="T:Rumpelstiltskin.Guard.ValidatedNotNullAttribute">
+            <summary>Marks the NotNull argument as being validated for not being null, to satisfy the static code analysis.</summary>
+            <remarks>
+            Notice that it does not matter what this attribute does, as long as
+            it is named ValidatedNotNullAttribute.
+            </remarks>
+        </member>
+    </members>
+</doc>

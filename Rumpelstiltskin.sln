@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1760D149-DDDD-44E7-B9FE-7D07F2B3BF85}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rumpelstiltskin.Domain", "src\Rumpelstiltskin.Domain\Rumpelstiltskin.Domain.csproj", "{B62FF7B6-BA34-4474-9146-81F2E0E90118}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C572C50D-F723-4195-BB55-F2DC14C4611D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rumpelstiltskin.Shared", "src\Rumpelstiltskin.Shared\Rumpelstiltskin.Shared.csproj", "{6FE4A337-F2EB-4956-82B0-AF81AD050E05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rumpelstiltskin.Api", "src\Rumpelstiltskin.Api\Rumpelstiltskin.Api.csproj", "{968B1F29-2771-4997-8882-6B8D811DD097}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rumpelstiltskin.UnitTests", "test\Rumpelstiltskin.UnitTests\Rumpelstiltskin.UnitTests.csproj", "{552E326C-1819-44B3-818F-4377FDB203DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rumpelstiltskin.ConsoleApp", "src\Rumpelstiltskin.ConsoleApp\Rumpelstiltskin.ConsoleApp.csproj", "{9DF352F2-1358-450D-986C-00AFDD8F8713}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rumpelstiltskin.Application", "src\Rumpelstiltskin.Application\Rumpelstiltskin.Application.csproj", "{05B6BD5E-7C03-4A0D-9C9F-7C9D478AB1B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{B725DF19-C7B1-4516-A0E6-5137DB271929}"
+	ProjectSection(SolutionItems) = preProject
+		data\all_en.txt = data\all_en.txt
+		data\boys.txt = data\boys.txt
+		data\boys_got.txt = data\boys_got.txt
+		data\boys_ma.txt = data\boys_ma.txt
+		data\boys_nl_2018_frequency.json = data\boys_nl_2018_frequency.json
+		data\girls.txt = data\girls.txt
+		data\girls_got.txt = data\girls_got.txt
+		data\girls_ma.txt = data\girls_ma.txt
+		data\grils_nl_2018_frequency.json = data\grils_nl_2018_frequency.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rules", "rules", "{4E0E73AB-10E8-4A98-AFE5-3BDC5ED83267}"
+	ProjectSection(SolutionItems) = preProject
+		rules\Rumpelstiltskin.ruleset = rules\Rumpelstiltskin.ruleset
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{5B102455-EEDD-41AE-B7D2-2C6313F39028}"
+	ProjectSection(SolutionItems) = preProject
+		shared\Guard.cs = shared\Guard.cs
+		shared\ProductInfo.cs = shared\ProductInfo.cs
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileSystemEventStore", "src\FileSystemEventStore\FileSystemEventStore.csproj", "{223382A5-915A-421D-BAFF-800E54FF4021}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B62FF7B6-BA34-4474-9146-81F2E0E90118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B62FF7B6-BA34-4474-9146-81F2E0E90118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B62FF7B6-BA34-4474-9146-81F2E0E90118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B62FF7B6-BA34-4474-9146-81F2E0E90118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE4A337-F2EB-4956-82B0-AF81AD050E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE4A337-F2EB-4956-82B0-AF81AD050E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE4A337-F2EB-4956-82B0-AF81AD050E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE4A337-F2EB-4956-82B0-AF81AD050E05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{968B1F29-2771-4997-8882-6B8D811DD097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968B1F29-2771-4997-8882-6B8D811DD097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968B1F29-2771-4997-8882-6B8D811DD097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968B1F29-2771-4997-8882-6B8D811DD097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{552E326C-1819-44B3-818F-4377FDB203DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{552E326C-1819-44B3-818F-4377FDB203DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{552E326C-1819-44B3-818F-4377FDB203DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{552E326C-1819-44B3-818F-4377FDB203DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DF352F2-1358-450D-986C-00AFDD8F8713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF352F2-1358-450D-986C-00AFDD8F8713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF352F2-1358-450D-986C-00AFDD8F8713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF352F2-1358-450D-986C-00AFDD8F8713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05B6BD5E-7C03-4A0D-9C9F-7C9D478AB1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05B6BD5E-7C03-4A0D-9C9F-7C9D478AB1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05B6BD5E-7C03-4A0D-9C9F-7C9D478AB1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05B6BD5E-7C03-4A0D-9C9F-7C9D478AB1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{223382A5-915A-421D-BAFF-800E54FF4021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{223382A5-915A-421D-BAFF-800E54FF4021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{223382A5-915A-421D-BAFF-800E54FF4021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{223382A5-915A-421D-BAFF-800E54FF4021}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{552E326C-1819-44B3-818F-4377FDB203DF} = {C572C50D-F723-4195-BB55-F2DC14C4611D}
+		{B725DF19-C7B1-4516-A0E6-5137DB271929} = {1760D149-DDDD-44E7-B9FE-7D07F2B3BF85}
+		{4E0E73AB-10E8-4A98-AFE5-3BDC5ED83267} = {1760D149-DDDD-44E7-B9FE-7D07F2B3BF85}
+		{5B102455-EEDD-41AE-B7D2-2C6313F39028} = {1760D149-DDDD-44E7-B9FE-7D07F2B3BF85}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0635F54A-841B-4300-B511-64A1930BAC52}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <CodeAnalysisRuleSet>.\..\..\rules\Rumpelstiltskin.ruleset</CodeAnalysisRuleSet>
+    <AssemblyName>rumpelstiltskin</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.9" />
+    <PackageReference Include="Qowaiv" Version="5.1.1" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.14.0.22654">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FileSystemEventStore\FileSystemEventStore.csproj" />
+    <ProjectReference Include="..\Rumpelstiltskin.Application\Rumpelstiltskin.Application.csproj" />
+    <ProjectReference Include="..\Rumpelstiltskin.Domain\Rumpelstiltskin.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
